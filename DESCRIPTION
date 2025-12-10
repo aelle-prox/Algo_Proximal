@@ -1,0 +1,22 @@
+Package: AlgoProximal
+Title: Proximal Algorithm For  LASSO Regression
+Version: 0.0.0.9000
+Authors@R: 
+    person("TCHATCHOUANG", "DJUICHI AELLE", , "aelle1672@gmail.com", role = c("aut", "cre"))
+Description: Implementation of the ISTA algorithm for the resolution of the LASSO regression(l1).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports:
+    stats,
+    utils,
+    Matrix,
+    MASS
+Suggests: 
+    testthat (>= 3.0.0),
+    glmnet,
+    knitr,
+    rmarkdown
+Config/testthat/edition: 3
+VignetteBuilder: knitr

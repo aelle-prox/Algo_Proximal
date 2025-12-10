@@ -1,0 +1,97 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# AlgoProximal
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of AlgoProximal is to **solve the LASSO regression problem**using the Iterative Shrinkage-Thresholding Algorithm
+
+## Installation
+
+You can install the development version of AlgoProximal like so:
+
+``` r
+# Ensure that you have all the developping tools
+# install.packages("devtools")
+devtools::install("C:\Users\OURBANI IBRAHIMA\Desktop\Dossier et Codes R\AlgoProximal")
+# Alternatively,if you use Rstudio:
+# Build >Install and Restart
+```
+## Methodology:L'algorithme ISTA
+
+The package solve the objectif function of LASSO,$$J(\beta)=f(\beta) +g(\beta)$$
+
+1.**Smooth Part(Loss step gradient) :**Minimisation of the least squares error by alternating two steps
+
+$$\tilde{\beta} = \beta^k -\gamma \nabla f(\beta^k)$$
+
+2. **Non smooth part(Proximal operator) :**Application of the ** soft thresholding operation**
+
+The key fonctions to implement are :'grad_loss','calculate_lipschitz_const()','prox_l1()'.
+
+
+
+## Example
+
+This is how create a LASSO modele and obtain their coefficients
+
+```{r example}
+# Charge the package and its fonctions
+library(devtools)
+load_all()
+# If the package is in R; install:library(AlgoProximal)
+
+# 1.Simulation of data(4 predictors,the two last are Zeros)
+set.seed(123)
+N <- 100
+P <- 4
+X <- matrix(rnorm(N *P),N ,P)
+y <- X%*% c(3,-2,0,0) + rnorm(N,0,0.5)
+
+# 2.Define the regularisation parameter
+lambda_test <- 0.2
+
+# 3.Execution of the ISTA solver
+# max_iter and tol are fixed to ensure convergence
+resultat_lasso <- ista_lasso(X=X,
+                             y=y,
+                             lambda=lambda_test,
+                             max_iter=5000,
+                             tol=1e-4)
+
+#Paste the obtained coefficients
+cat(" Predicts coefficients( the third and forth must be close to zero) :\n ")
+print(round(resultat_lasso$coefficients,4))
+
+
+```
+
+What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+
+```{r cars}
+summary(cars)
+```
+
+You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
+
+You can also embed plots, for example:
+
+```{r pressure, echo = FALSE}
+plot(pressure)
+```
+
+In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
