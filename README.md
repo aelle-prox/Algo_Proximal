@@ -7,7 +7,7 @@
 <!-- badges: end -->
 
 The goal of AlgoProximal is to **solve the LASSO regression
-problem**using the Iterative Shrinkage-Thresholding Algorithm
+problem** using the Iterative Shrinkage-Thresholding Algorithm
 
 ## Installation
 
@@ -24,7 +24,7 @@ devtools::install("C:\Users\Aelle\Desktop\Dossier et Codes R\AlgoProximal")
 ## Methodology:L’algorithme ISTA
 
 The package solve the objectif function of
-LASSO,$$J(\beta)=f(\beta) +g(\beta)$$
+Lasso, $$J(\beta)=f(\beta) +g(\beta)$$
 
 1.**Smooth Part(Loss step gradient) :**Minimisation of the least squares
 error by alternating two steps
@@ -35,7 +35,7 @@ $$\tilde{\beta} = \beta^k -\gamma \nabla f(\beta^k)$$
     thresholding operation\*\*
 
 The key fonctions to implement are
-:‘grad_loss’,‘calculate_lipschitz_const()’,‘prox_l1()’.
+:‘grad_loss’ ,‘calculate_lipschitz_const()’ ,‘prox_l1()’.
 
 ## Example
 
@@ -77,19 +77,8 @@ print(round(resultat_lasso$coefficients,4))
 
 
 
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
 
 
-up-to-date. `devtools::build_readme()` is handy for this.
 
 
 
