@@ -16,7 +16,7 @@ You can install the development version of AlgoProximal like so:
 ``` r
 # Ensure that you have all the developping tools
 # install.packages("devtools")
-devtools::install("C:\Users\OURBANI IBRAHIMA\Desktop\Dossier et Codes R\AlgoProximal")
+devtools::install("C:\Users\Aelle\Desktop\Dossier et Codes R\AlgoProximal")
 # Alternatively,if you use Rstudio:
 # Build >Install and Restart
 ```
@@ -75,8 +75,7 @@ print(round(resultat_lasso$coefficients,4))
 #> [1]  2.6678 -1.8782  0.0000  0.0000
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+
 
 ``` r
 summary(cars)
@@ -89,12 +88,8 @@ summary(cars)
 #>  Max.   :25.0   Max.   :120.00
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
+
 up-to-date. `devtools::build_readme()` is handy for this.
 
-You can also embed plots, for example:
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
