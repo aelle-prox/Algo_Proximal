@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+=======
 ---
 output: github_document
 ---
@@ -13,12 +18,18 @@ knitr::opts_chunk$set(
 )
 ```
 
+>>>>>>> 6c01aca08b4c7bb6e255f142cba02db1a5204a47
 # AlgoProximal
 
 <!-- badges: start -->
 <!-- badges: end -->
 
+<<<<<<< HEAD
+The goal of AlgoProximal is to **solve the LASSO regression
+problem** using the Iterative Shrinkage-Thresholding Algorithm
+=======
 The goal of AlgoProximal is to **solve the LASSO regression problem**using the Iterative Shrinkage-Thresholding Algorithm
+>>>>>>> 6c01aca08b4c7bb6e255f142cba02db1a5204a47
 
 ## Installation
 
@@ -27,6 +38,38 @@ You can install the development version of AlgoProximal like so:
 ``` r
 # Ensure that you have all the developping tools
 # install.packages("devtools")
+<<<<<<< HEAD
+devtools::install_github("aelle-prox/Algo_Proximal")
+library(AlgoProximal)
+# Alternatively,if you use Rstudio:
+# Build >Install and Restart
+```
+
+## Methodology:L’algorithme ISTA
+
+The package solve the objectif function of
+LASSO,
+$$J(\beta)=f(\beta) +g(\beta)$$
+
+1.**Smooth Part(Loss step gradient) :**Minimisation of the least squares
+error by alternating two steps
+
+$$\tilde{\beta} = \beta^k -\gamma \nabla f(\beta^k)$$
+
+2.  **Non smooth part(Proximal operator) :**Application of the \*\* soft
+    thresholding operation\*\*
+
+The key fonctions to implement are
+:grad_loss,calculate_lipschitz_const(),prox_l1().
+
+This package is concieved for;
+
+- Students which need to understand proximal algorithm
+
+- Teachers in statistics and automatique learning
+
+- Claire implementation of proximal algorithm in R
+=======
 devtools::install("C:\Users\OURBANI IBRAHIMA\Desktop\Dossier et Codes R\AlgoProximal")
 # Alternatively,if you use Rstudio:
 # Build >Install and Restart
@@ -44,16 +87,27 @@ $$\tilde{\beta} = \beta^k -\gamma \nabla f(\beta^k)$$
 The key fonctions to implement are :'grad_loss','calculate_lipschitz_const()','prox_l1()'.
 
 
+>>>>>>> 6c01aca08b4c7bb6e255f142cba02db1a5204a47
 
 ## Example
 
 This is how create a LASSO modele and obtain their coefficients
 
+<<<<<<< HEAD
+``` r
+# Charge the package and its fonctions
+library(devtools)
+#> Loading required package: usethis
+load_all()
+#> ℹ Loading AlgoProximal
+# If the package is install:library(AlgoProximal)
+=======
 ```{r example}
 # Charge the package and its fonctions
 library(devtools)
 load_all()
 # If the package is in R; install:library(AlgoProximal)
+>>>>>>> 6c01aca08b4c7bb6e255f142cba02db1a5204a47
 
 # 1.Simulation of data(4 predictors,the two last are Zeros)
 set.seed(123)
@@ -75,6 +129,27 @@ resultat_lasso <- ista_lasso(X=X,
 
 #Paste the obtained coefficients
 cat(" Predicts coefficients( the third and forth must be close to zero) :\n ")
+<<<<<<< HEAD
+#>  Predicts coefficients( the third and forth must be close to zero) :
+#> 
+print(round(resultat_lasso$coefficients,4))
+#> [1]  2.6678 -1.8782  0.0000  0.0000
+```
+
+## References
+
+-Tibshirani,R(1996).Regression shrinkage and Selection via the LASSO.
+
+## Library
+
+This package is distributes via the licence MIT
+
+## Author
+
+Github :devtools::https://github.com/aelle-prox
+
+
+=======
 print(round(resultat_lasso$coefficients,4))
 
 
@@ -95,3 +170,4 @@ plot(pressure)
 ```
 
 In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+>>>>>>> 6c01aca08b4c7bb6e255f142cba02db1a5204a47
